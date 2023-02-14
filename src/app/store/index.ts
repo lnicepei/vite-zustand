@@ -1,4 +1,4 @@
-import { create, StateCreator } from 'zustand'
+import { create, StateCreator } from "zustand";
 
 interface BearSlice {
   bears: number
@@ -11,10 +11,10 @@ const createBearSlice: StateCreator<
   [],
   BearSlice
 > = (set) => ({
-  bears: 0,
-  addBear: () => set((state) => ({ bears: state.bears + 1 })),
-  eatFish: () => set((state) => ({ fishes: state.fishes - 1 })),
-})
+	bears: 0,
+	addBear: () => set((state) => ({ bears: state.bears + 1 })),
+	eatFish: () => set((state) => ({ fishes: state.fishes - 1 })),
+});
 
 interface FishSlice {
   fishes: number
@@ -26,11 +26,11 @@ const createFishSlice: StateCreator<
   [],
   FishSlice
 > = (set) => ({
-  fishes: 0,
-  addFish: () => set((state) => ({ fishes: state.fishes + 1 })),
-})
+	fishes: 0,
+	addFish: () => set((state) => ({ fishes: state.fishes + 1 })),
+});
 
 export const useBoundStore = create<BearSlice & FishSlice>()((...a) => ({
-  ...createBearSlice(...a),
-  ...createFishSlice(...a),
-}))
+	...createBearSlice(...a),
+	...createFishSlice(...a),
+}));
