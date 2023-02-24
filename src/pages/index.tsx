@@ -1,32 +1,25 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
-import { PrivateOutlet } from "features";
+import { Country } from "entities";
 
-import MessagesPage from "./MessagesPage";
-import LoginPage from "./LoginPage";
+import CountriesPage from "./CountriesPage";
 import ErrorPage from "./ErrorPage";
 
 export const router = createBrowserRouter([
   {
-    path: `/${"LOGIN"}`,
-    element: <LoginPage />,
+    path: "/",
+    element: <Navigate to="search" />,
   },
   {
-    path: "/",
-    element: <Navigate to={"SEARCH"} />,
+    path: "countries",
+    element: <CountriesPage />,
+  },
+  {
+    path: ":countryName",
+    element: <Country />,
   },
   {
     path: "*",
-    element: <PrivateOutlet />,
-    children: [
-      {
-        path: `${"CLIENT"}/:${"CLIENT_ID"}`,
-        element: <MessagesPage />,
-      },
-      {
-        path: "*",
-        element: <ErrorPage />,
-      },
-    ],
+    element: <ErrorPage />,
   },
 ]);
