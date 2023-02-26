@@ -1,6 +1,6 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
-
 import { Country } from "entities";
+
+import { Navigate, createBrowserRouter } from "react-router-dom";
 
 import CountriesPage from "./CountriesPage";
 import ErrorPage from "./ErrorPage";

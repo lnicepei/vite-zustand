@@ -1,4 +1,4 @@
-import { create, StateCreator } from "zustand";
+import { StateCreator, create } from "zustand";
 
 interface BearSlice {
   bears: number;
