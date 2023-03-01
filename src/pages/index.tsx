@@ -1,6 +1,6 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 
-import CountriesPage from "./CountriesListPage";
+import CountriesListPage from "./CountriesListPage";
 import CountryPage from "./CountryPage";
 import ErrorPage from "./ErrorPage";
 import LoginPage from "./LoginPage";
@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "countries",
-    element: <CountriesPage />,
+    element: <CountriesListPage />,
   },
   {
     path: ":countryName",

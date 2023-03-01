@@ -1,6 +1,6 @@
 import React from "react";
 
-const CountriesPage = () => {
+const CountriesListPage = () => {
   // const { isLoading } = getCountriesListAsync({
   //   onSuccess: countryStore(state => )
   // });
@@ -12,4 +12,4 @@ const CountriesPage = () => {
   );
 };
 
-export default CountriesPage;
+export default CountriesListPage;

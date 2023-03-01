@@ -8,7 +8,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <button onClick={() => logIn()}>Login</button>
+      <button onClick={() => logIn()}>{stuff?.displayName}</button>
     </div>
   );
 };
