@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       app: resolve("src/app/"),
       pages: resolve("src/pages/"),
+      shared: resolve("src/shared/"),
       entities: resolve("src/entities/"),
       features: resolve("src/features/"),
       processes: resolve("src/processes/"),
