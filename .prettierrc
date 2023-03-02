@@ -1,4 +1,15 @@
 {
   "tabWidth": 2,
-  "semi": true
+  "semi": true,
+  "importOrder": [
+    "react",
+    "^app/(.*)$",
+    "^entities/(.*)$",
+    "^features/(.*)$",
+    "^pages/(.*)$",
+    "^shared/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
