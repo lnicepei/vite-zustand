@@ -1,2 +1,2 @@
-export * from "./Country/ui";
-export * from "./Country/model";
+export * from "./country/ui";
+export * from "./country/model";
