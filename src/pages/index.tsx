@@ -3,7 +3,8 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import CountriesListPage from "./CountriesListPage";
 import CountryPage from "./CountryPage";
 import ErrorPage from "./ErrorPage";
-import LoginPage from "./LoginPage";
+import HomePage from "./HomePage";
+import { LoginWithGoogle } from "./LoginPage/LoginWithGoogle";
 
 export const router = createBrowserRouter([
   {
@@ -12,7 +13,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "login",
-    element: <LoginPage />,
+    element: <LoginWithGoogle />,
+  },
+  {
+    path: "home",
+    element: <HomePage />,
   },
   {
     path: "countries",
