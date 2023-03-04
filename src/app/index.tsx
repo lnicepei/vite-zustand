@@ -3,10 +3,11 @@ import { RouterProvider } from "react-router-dom";
 
 import { router } from "../pages";
 import { withProviders } from "./providers";
+import "./styles/index.scss";
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       <RouterProvider router={router} />
       <ReactQueryDevtools />
     </div>
