@@ -1,12 +1,14 @@
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
-import { app } from ".";
+import { useGetAuth } from "../lib/useGetAuth";
+
+const auth = useGetAuth();
 
 const provider = new GoogleAuthProvider();
-
-const auth = getAuth(app);
-
-export const logIn = async () => {
+export const logIn = async (
+  setName: (name: string) => void,
+  setToken: (name: string) => void
+) => {
   try {
     const result = await signInWithPopup(auth, provider);
     // This gives you a Google Access Token. You can use it to access the Google API.
@@ -16,8 +18,12 @@ export const logIn = async () => {
     const user = result.user;
     // IdP data available using getAdditionalUserInfo(result)
     // ...
+
+    setToken(token!);
+    setName(user.displayName!);
     console.log(user, token);
   } catch (error: unknown) {
+    console.log(error);
     // if (typeof error FirebaseError) {
     //   const errorCode = error.code;
     //   const errorMessage = error.message;
