@@ -19,16 +19,21 @@ interface CountriesSlice {
   setListCountries: (country: ListCountry[]) => void;
 }
 
-const withMiddlewares = (f: StateCreator<CountriesSlice>) =>
-  devtools(persist(f, { name: "all-countries" }));
+export const withMiddlewares = (
+  f: StateCreator<CountriesSlice>,
+  name: string
+) => devtools(persist(f, { name }));
 
 export const countryStore = create<CountriesSlice>()(
-  withMiddlewares((set) => ({
-    listCountries: [],
-    activeCountry: {} as Country,
-    setActiveCountry: (activeCountry) => set(() => ({ activeCountry })),
-    setListCountries: (listCountries) => set(() => ({ listCountries })),
-  }))
+  withMiddlewares(
+    (set) => ({
+      listCountries: [],
+      activeCountry: {} as Country,
+      setActiveCountry: (activeCountry) => set(() => ({ activeCountry })),
+      setListCountries: (listCountries) => set(() => ({ listCountries })),
+    }),
+    "all-countries"
+  )
 );
 
 export const getCountryByNameAsync = (params: GetCountryParams) =>
